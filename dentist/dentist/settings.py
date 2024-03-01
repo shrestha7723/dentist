@@ -122,12 +122,16 @@ STATICFILES_DIRs = [
     os.path.join(BASE_DIR, 'static')
 ]
 
+DJANGO_SETTINGS_MODULE="dentist.settings"
+
 #email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = "smtp.google.com"
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "ns77850617@gmail.com"
 EMAIL_HOST_PASSWORD = "whoi axcx gfuv rbsm"
-EMAIL_USE_TLS = False
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 
 
 # Default primary key field type
