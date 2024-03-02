@@ -1,9 +1,15 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
+from django.http import HttpResponse
+
+from django.core.mail import get_connection
+from django.core.mail.message import EmailMessage
+
 # Create your views here.
 def home(request):
     return render(request, "home.html", {})
 
+connection = get_connection(use_tls=True, host='smtp.gmail.com', port=587,username="ns77850617@gmail.com", password="whoi axcx gfuv rbsm")
 def contact(request):
     if request.method == "POST":
         name = request.POST["name"]
@@ -15,12 +21,13 @@ def contact(request):
             print(f"Getting message from {name}")
 
         # send email
-        send_mail(
-            "message from "+ name, # subject
-            message, # message
-            email, # from email
-            ["nshresthan@gmail.com"],# to email
-        )
+        EmailMessage(subject=subject, body=message, from_email="ns77850617@gmail.com", to=[email], connection=connection).send()
+        # send_mail(
+        #     "message from "+ name, # subject
+        #     message, # message
+        #     email, # from email
+        #     ["nshresthan@gmail.com"],# to email
+        # )
 
         return render(request, "contact.html", {'name': name})
 
@@ -30,11 +37,6 @@ def doctors(request):
     return render(request, "doctors.html", {})
 
 
-from django.core.mail import send_mail
-from django.http import HttpResponse
-
-from django.core.mail import get_connection
-from django.core.mail.message import EmailMessage
 
 
 def send_mail(request):
