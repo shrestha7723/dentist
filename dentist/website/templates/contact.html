@@ -31,14 +31,14 @@
     
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Denta<span>Care</span></a>
+	      <a class="navbar-brand" href="home.html">Denta<span>Care</span></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
 	          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
 	          <li class="nav-item"><a href="doctors.html" class="nav-link">Doctors</a></li>
@@ -57,7 +57,7 @@
         <div class="container" data-scrollax-parent="true">
           <div class="row slider-text align-items-end">
             <div class="col-md-7 col-sm-12 ftco-animate mb-5">
-              <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2"><a href="index.html">Home</a></span> <span>Blog</span></p>
+              <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2"><a href="home.html">Home</a></span> <span>Blog</span></p>
               <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Contact Us</h1>
             </div>
           </div>
@@ -69,7 +69,10 @@
       <div class="container">
         <div class="row d-flex mb-5 contact-info">
           <div class="col-md-12 mb-4">
-            <h2>Get in touch {{ name }}</h2>
+            {% if name%}
+              <h2>Get in touch {{ name }}</h2>
+              <br> We have received your message and will respond you quickly.
+            {% else %}
             <h2 class="h4">Contact Information</h2>
           </div>
           <div class="w-100"></div>
@@ -108,7 +111,7 @@
             </form>
           
           </div>
-
+    {% endif %}
           <div class="col-md-6" id="map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5034.739435646147!2d4.706959793159787!3d50.8798672208139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c16183dfaf44ef%3A0x337282dbab9b69d!2sTandartsen%20Kwadrant%20Leuven!5e0!3m2!1sen!2sbe!4v1707948630059!5m2!1sen!2sbe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
